@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LocalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
+Route::get("hello", [LocalController::class, "welcome"])->name(" homePage");
+
+
+Route::post("store", [LocalController::class, "formsubmit"])->name(" store");
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
